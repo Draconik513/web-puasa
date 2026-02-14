@@ -29,7 +29,7 @@ export default function Dashboard({ ramadhanData }) {
 
   // Calculate fasting days from 18 Feb 2026 to 20 March 2026 (30 days)
   const calculateFastingDay = () => {
-    const today = new Date();
+    const today = new Date(2026, 1, 18); // Set to 18 Feb 2026 (first day of fasting)
     today.setHours(0, 0, 0, 0);
     const ramadhanStart = new Date(2026, 1, 18); // 18 Feb 2026
     const ramadhanEnd = new Date(2026, 2, 19); // 19 March 2026 (30 days)

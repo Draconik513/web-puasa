@@ -42,14 +42,9 @@ export default function IbadahTracker() {
 
   useEffect(() => {
     if (!weeklyProgress || weeklyProgress.length === 0) {
-      const ramadhanStart = new Date(2026, 1, 18); // 18 Feb 2026
-      const today = new Date();
+      const ramadhanStart = new Date(2026, 1, 14); // 14 Feb 2026
+      const today = new Date(2026, 1, 14); // Set to first day of fasting
       today.setHours(0, 0, 0, 0);
-      
-      if (today < ramadhanStart) {
-        setWeeklyProgress([]);
-        return;
-      }
       
       const weekStart = new Date(ramadhanStart);
       weekStart.setHours(0, 0, 0, 0);
@@ -60,12 +55,10 @@ export default function IbadahTracker() {
       for (let i = 0; i < 7; i++) {
         const day = new Date(weekStart);
         day.setDate(day.getDate() + i);
-        if (day <= today) {
-          days.push({
-            date: day.toISOString(),
-            progress: 0,
-          });
-        }
+        days.push({
+          date: day.toISOString(),
+          progress: 0,
+        });
       }
       
       setWeeklyProgress([{

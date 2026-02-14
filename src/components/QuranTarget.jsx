@@ -205,7 +205,7 @@ export default function QuranTarget() {
                 scale: [1, 1.25, 1],
                 opacity: [0.45, 0.75, 0.45]
               }}
-              transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+               transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
             />
 
             {/* Middle Bright Fires */}

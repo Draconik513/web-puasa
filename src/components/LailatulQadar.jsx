@@ -95,11 +95,7 @@ export default function LailatulQadar() {
   };
 
   const isDateAvailable = (date) => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const checkDate = new Date(date);
-    checkDate.setHours(0, 0, 0, 0);
-    return checkDate <= today;
+    return true;
   };
 
   const SplashEffect = () => (
