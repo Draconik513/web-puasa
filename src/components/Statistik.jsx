@@ -46,6 +46,7 @@ export default function Statistik() {
   const ramadhanStart = new Date(2026, 1, 14);
   const today = new Date(2026, 1, 14);
   today.setHours(0, 0, 0, 0);
+  const daysElapsed = Math.floor((today - ramadhanStart) / (1000 * 60 * 60 * 24)) + 1;
   const fastingBreaks = puasaIbadah?.completed ? 0 : (daysElapsed > 0 ? 1 : 0);
   const fastingConsistency = daysElapsed > 0 ? Math.round(((daysElapsed - fastingBreaks) / daysElapsed) * 100) : 0;
 
