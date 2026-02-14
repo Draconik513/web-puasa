@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/preflight" layer(base);
+@import "tailwindcss/utilities" layer(utilities);
+
+@theme {
+  --color-islamic-green: #1B4D3E;
+  --color-islamic-gold: #C8A87D;
+  --color-islamic-cream: #FFF9E6;
+  --color-islamic-night: #0B2B26;
+  --color-islamic-sand: #F5E6D3;
+  
+  --font-family-arabic: Amiri, serif;
+  --font-family-poppins: Poppins, sans-serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  
+  :root.dark {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  .ramadhan-card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 
+    transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]
+    border border-gray-100 dark:border-gray-700;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-green-600 to-green-700 
+    hover:from-green-700 hover:to-green-800 
+    text-white font-semibold py-3 px-6 rounded-xl 
+    transition-all duration-300 transform hover:scale-105 
+    focus:ring-4 focus:ring-green-300 focus:outline-none
+    shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 dark:bg-gray-700 
+    hover:bg-gray-200 dark:hover:bg-gray-600 
+    text-gray-800 dark:text-white font-semibold py-3 px-6 rounded-xl 
+    transition-all duration-300;
+  }
+
+  .islamic-pattern {
+    @apply bg-gradient-to-br from-amber-50 dark:from-gray-900 
+    to-white dark:to-gray-800;
+  }
+
+  .progress-ring {
+    @apply relative inline-flex;
+  }
+
+  .ramadhan-gradient {
+    @apply bg-gradient-to-br from-green-800 to-green-700;
+  }
+}
+
+@layer utilities {
+  .rtl {
+    direction: rtl;
+  }
+  
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+  }
+}
