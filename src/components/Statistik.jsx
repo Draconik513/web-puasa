@@ -43,10 +43,9 @@ export default function Statistik() {
 
   // Hitung puasa bolong otomatis dari ibadah puasa
   const puasaIbadah = ibadahList.find(i => i.name === 'Puasa');
-  const ramadhanStart = new Date(2026, 1, 18);
-  const today = new Date();
+  const ramadhanStart = new Date(2026, 1, 14);
+  const today = new Date(2026, 1, 14);
   today.setHours(0, 0, 0, 0);
-  const daysElapsed = today >= ramadhanStart ? Math.floor((today - ramadhanStart) / (1000 * 60 * 60 * 24)) + 1 : 0;
   const fastingBreaks = puasaIbadah?.completed ? 0 : (daysElapsed > 0 ? 1 : 0);
   const fastingConsistency = daysElapsed > 0 ? Math.round(((daysElapsed - fastingBreaks) / daysElapsed) * 100) : 0;
 
@@ -61,10 +60,6 @@ export default function Statistik() {
     const date = new Date(ramadhanStart);
     date.setDate(date.getDate() + i);
     date.setHours(0, 0, 0, 0);
-    
-    if (date > today) {
-      return null;
-    }
     
     const dateStr = date.toDateString();
     const dayProgress = weeklyProgress[0]?.days.find(d => 
